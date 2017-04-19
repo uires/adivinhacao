@@ -7,8 +7,8 @@ int main(){
     printf("************************************\n");
 	printf("Bem vindo ao meu jogo de adivinhacao\n");
 	printf("************************************\n");
-	int numeroSecreto = 10;
-	
+	// declarações 
+	int numeroSecreto = 10;	
 	int chute;
 	
 	
