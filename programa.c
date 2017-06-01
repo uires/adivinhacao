@@ -19,35 +19,49 @@ int main(void){
 	printf("\n\n");
 	
 	// declarações 
-	#define NUMERO_DE_TENTATIVAS 3;
-	int numeroSecreto = 6;	
+	int numeroSecreto = 32;	
+	int pontos = 1000;
 	int chute;
-	// For para dar 3 chances ao jogador
-	for(int i= 1; i <= NUMERO_DE_TENTATIVAS; i++){
+	
+	int tentativas = 1;
+	// While to repeat this three times ;
+	while(1){
 		
-		printf("Tentativa: %d\n", i);
-		printf("Qual o seu chute? (0 a 10) \n");			
+		printf("Qual o seu chute?\n");			
 		scanf("%d", &chute);			
-		printf("\n\nSeu chute foi: %d\n",chute);
-		
-		// Estrutura condicional para verificar o número inserido pelo usuário
-		if(numeroSecreto == chute){
-			printf("Acertou ! Parabéns !\n");
+	
+			
+		if (numeroSecreto == chute){
+			printf("Você acertou :D\n");
 			break;
 		}
-		else{
-			printf("Errou !\n");
-			if(chute < numeroSecreto){
-				printf("O seu chute é menor que o número secreto...\n");
-			}else if(chute > numeroSecreto){
-				printf("O seu chute é maior que o número secreto...\n\n");
-			}if(i <= 3){
-				printf("Tente de novo...");
-				printf("\nBoa sorte...\n");		
-			}	
-		}
-	}			
+		// Estrutura condicional para verificar o número inserido pelo usuário
 		
+		if(chute < 0){  // se o número for menor que 0, o loop quebra 
+			printf("Erro, Você não pode digitar um número menor que zero\n");
+			continue;
+		}
+		if(numeroSecreto == chute){
+			printf("Acertou ! Parabéns !\n");
+		}
+		else{
+			printf("\n\nErrou !------\n");
+			if(chute < numeroSecreto){
+				printf("O seu chute foi menor que o número secreto...\n\n");	
+			}else if(chute > numeroSecreto){
+				
+				printf("O seu chute foi maior que o número secreto...\n\n");
+			}
+		}
+
+		tentativas++;
+		int pontosperdidos = (chute - numeroSecreto) / 2;
+		pontos = pontos - pontosperdidos;
+	}			
+	
+	printf("Fim de jogo\n");
+	printf("Total tentativas: %d", tentativas);
+	printf("\nSeu total de pontos foi: %d\n", pontos);
 	
 	system("PAUSE");
 	return 0;
