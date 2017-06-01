@@ -25,37 +25,64 @@ int main(void){
 	
 	int numeroGrandeQualquer = rand();
 	int numeroSecreto = numeroGrandeQualquer % 100;	
+	
 	double pontos = 1000;
 	int chute;
+	int tentativas = 1;	
+	int dificuldade;
 	
-	int tentativas = 1;
-	// While to repeat this three times ;
-	while(1){
-		
-		printf("Qual é seu chute?\n");			
-		scanf("%d", &chute);			
+	printf("\n Qual a dificuldade desejada?\n");
+	printf("Fácil(1) ou Médio(2) ou Difícil(3) \nEscolha: ");
 	
-			
-		if (numeroSecreto == chute){
-			printf("Você acertou :D\n");
+	scanf("%d", &dificuldade);
+
+	if(dificuldade <= 0 || dificuldade > 3){
+		printf("Erro, valor de dificuldade incorreto!");
+		printf("\nEscolhemos como padrão o nível, Difícil\n");
+		dificuldade = 3;		
+	}
+	int numerotentativas;
+	
+	
+	switch(dificuldade){
+		case 1:
+			numerotentativas = 20;
 			break;
-		}
-		// Estrutura condicional para verificar o número inserido pelo usuário
+		case 2:
+			numerotentativas = 10;
+			break;
+		case 3:
+			numerotentativas = 5;
+			break;
+		default:
+			numerotentativas = 3;
+			break;
+	}
+	
+	printf("\nO nível de dificuldade escolhido foi: %d\n\nBoa sorte --------------", dificuldade);
+	
+	// for para 5 tentativas;
+	for(int i = 1; i <= numerotentativas; i++){
 		
+		printf("\nQual é seu chute?\n");			
+		scanf("%d", &chute);			
+			
+		// Estrutura condicional para verificar o número inserido pelo usuário
 		if(chute < 0){  // se o número for menor que 0, o loop quebra 
 			printf("Erro, Você não pode digitar um número menor que zero\n");
 			continue;
 		}
+				
 		if(numeroSecreto == chute){
 			printf("Acertou ! Parabéns !\n");
+			break;
 		}
 		else{
-			printf("\n\nErrou !------\n");
+			printf("\nErrou !------\n");
 			if(chute < numeroSecreto){
-				printf("O seu chute foi menor que o número secreto...\n\n");	
+				printf("O seu chute foi menor que o número secreto...\n");	
 			}else if(chute > numeroSecreto){
-				
-				printf("O seu chute foi maior que o número secreto...\n\n");
+				printf("O seu chute foi maior que o número secreto...\n");
 			}
 		}
 
@@ -64,10 +91,20 @@ int main(void){
 		double pontosperdidos = abs((chute - numeroSecreto) / (double)2);
 		pontos = pontos - pontosperdidos;
 	}			
+	printf("\n------Fim de jogo------\n");
 	
-	printf("Fim de jogo\n");
-	printf("Total tentativas: %d", tentativas);
-	printf("\nSeu total de pontos foi: %.1f\n", pontos);
+	if(numeroSecreto == chute){
+
+		printf("Total tentativas: %d", tentativas);
+		printf("\nSeu total de pontos foi: %.1f\n", pontos);		
+	}else{
+		
+		printf("\nVocê tentou, mas falhou miseravelmente. Tente novamente!\7");
+		system("PAUSE");
+	}
+	
+	
+	
 	
 	return 0;
 }
