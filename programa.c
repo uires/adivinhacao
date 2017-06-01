@@ -99,10 +99,25 @@ int main(void){
 		printf("\nSeu total de pontos foi: %.1f\n", pontos);		
 	}else{
 		
-		printf("\nVocê tentou, mas falhou miseravelmente. Tente novamente!\7");
-		system("PAUSE");
+		printf("\nVocê tentou, mas falhou miseravelmente. Tente novamente!\7\n\n");
+		
+	    printf("             OOOOOOOOOOO               \n");
+	    printf("         OOOOOOOOOOOOOOOOOOO           \n");
+	    printf("      OOOOOO  OOOOOOOOO  OOOOOO        \n");
+	    printf("    OOOOOO      OOOOO      OOOOOO      \n");
+	    printf("  OOOOOOOO  #   OOOOO  #   OOOOOOOO    \n");
+	    printf(" OOOOOOOOOO    OOOOOOO    OOOOOOOOOO   \n");
+	    printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+	    printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+	    printf("OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO  \n");
+	    printf(" OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO   \n");
+	    printf("  OOOO   OOOOOOOOOOOOOOOOOOOO  OOOO    \n");
+	    printf("    OOOOO   OOOOOOOOOOOOOOO   OOOO     \n");
+	    printf("      OOOOOO   OOOOOOOOO   OOOOOO      \n");
+	    printf("         OOOOOO         OOOOOO         \n");
+	    printf("             OOOOOOOOOOOO              \n");
+		
 	}
-	
 	
 	
 	
