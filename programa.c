@@ -1,8 +1,8 @@
 // includes
 #include <stdio.h>
 #include <locale.h>
-#include <math.h>
 #include <stdlib.h>
+#include <time.h>
 
 
 
@@ -20,7 +20,11 @@ int main(void){
 	printf("\n\n");
 	
 	// declarações 
-	int numeroSecreto = 32;	
+	int segundos = time(0);
+	srand(segundos);
+	
+	int numeroGrandeQualquer = rand();
+	int numeroSecreto = numeroGrandeQualquer % 100;	
 	double pontos = 1000;
 	int chute;
 	
