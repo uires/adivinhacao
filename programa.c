@@ -1,13 +1,14 @@
+// includes
 #include <stdio.h>
 #include <locale.h>
-#include <conio.h>
 #include <math.h>
+#include <stdlib.h>
 
 
 
 int main(void){
 	setlocale(LC_ALL, "Portuguese");
-
+	
 	printf("\n\n");
 	printf("          P  /_\  P                              \n");
 	printf("         /_\_|_|_/_\                             \n");
@@ -20,14 +21,14 @@ int main(void){
 	
 	// declarações 
 	int numeroSecreto = 32;	
-	int pontos = 1000;
+	double pontos = 1000;
 	int chute;
 	
 	int tentativas = 1;
 	// While to repeat this three times ;
 	while(1){
 		
-		printf("Qual o seu chute?\n");			
+		printf("Qual é seu chute?\n");			
 		scanf("%d", &chute);			
 	
 			
@@ -55,14 +56,14 @@ int main(void){
 		}
 
 		tentativas++;
-		int pontosperdidos = (chute - numeroSecreto) / 2;
+		
+		double pontosperdidos = abs((chute - numeroSecreto) / (double)2);
 		pontos = pontos - pontosperdidos;
 	}			
 	
 	printf("Fim de jogo\n");
 	printf("Total tentativas: %d", tentativas);
-	printf("\nSeu total de pontos foi: %d\n", pontos);
+	printf("\nSeu total de pontos foi: %.1f\n", pontos);
 	
-	system("PAUSE");
 	return 0;
 }
